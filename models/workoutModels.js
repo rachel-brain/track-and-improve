@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
     id: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
@@ -23,27 +23,27 @@ const WorkoutSchema = new Schema({
     },
 
     duration: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false
     },
 
     weight: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false
     },
 
     reps: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false
     },
 
     sets: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false
     },
 
     distance: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false
     },
 
@@ -57,7 +57,7 @@ const WorkoutSchema = new Schema({
 
 // setWorkoutFullname: sets the current workout's `workoutFullname` property to the `workoutname` appended to the `workoutclass`
 WorkoutSchema.methods.setWorkoutFullname = function () {
-    this.fullname = `${this.workoutclass} : ${this.workoutname}`;
+    this.workoutFullname = `${this.workoutclass} : ${this.workoutname}`;
     return this.workoutFullname;
 };
 
