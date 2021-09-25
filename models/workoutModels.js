@@ -3,54 +3,49 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
-    id: {
-        type: Number,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-
-    workoutclass: {
-        type: String,
-        trim: true,
-        required: "Class of Workout is Required"
-    },
-
-    workoutname: {
-        type: String,
-        trim: true,
-        required: "Name of Workout is Required"
-    },
-
-    duration: {
-        type: Number,
-        allowNull: false
-    },
-
-    weight: {
-        type: Number,
-        allowNull: false
-    },
-
-    reps: {
-        type: Number,
-        allowNull: false
-    },
-
-    sets: {
-        type: Number,
-        allowNull: false
-    },
-
-    distance: {
-        type: Number,
-        allowNull: false
-    },
-
-    workoutCreated: {
+    dateCreated: {
         type: Date,
         default: Date.now
     },
+
+    exercises: [{
+        workoutclass: {
+            type: String,
+            trim: true,
+            required: "Class of Workout is Required"
+        },
+
+        workoutname: {
+            type: String,
+            trim: true,
+            required: "Name of Workout is Required"
+        },
+
+        duration: {
+            type: Number,
+            allowNull: false
+        },
+
+        weight: {
+            type: Number,
+            allowNull: false
+        },
+
+        reps: {
+            type: Number,
+            allowNull: false
+        },
+
+        sets: {
+            type: Number,
+            allowNull: false
+        },
+
+        distance: {
+            type: Number,
+            allowNull: false
+        },
+    }],
 
     lastUpdated: Date,
 });
