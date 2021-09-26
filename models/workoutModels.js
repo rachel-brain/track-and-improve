@@ -11,7 +11,7 @@ const WorkoutSchema = new Schema({
     exercises: [{
         workoutclass: {
             type: String,
-            trim: true,
+            enum: ["resistance", "cardio"],
             required: "Class of Workout is Required"
         },
 
@@ -28,26 +28,35 @@ const WorkoutSchema = new Schema({
 
         weight: {
             type: Number,
-            allowNull: false
+            allowNull: false,
+            default: 50
         },
 
         reps: {
             type: Number,
-            allowNull: false
+            allowNull: false,
+            default: 8
         },
 
         sets: {
             type: Number,
-            allowNull: false
+            allowNull: false,
+            default: 4
         },
 
         distance: {
             type: Number,
-            allowNull: false
+            allowNull: false,
+            default: 2
         },
     }],
 
-    lastUpdated: Date,
+    totalDuration: {
+        type: Number,
+        default: 1
+    },
+
+    lastUpdated: Date
 });
 
 // setWorkoutFullname: sets the current workout's `workoutFullname` property to the `workoutname` appended to the `workoutclass`

@@ -3,61 +3,61 @@ const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 
-router.post("/api/workouts", ({
-    body
-}, res) => {
-    Workout.create({})
-        .then((dbWorkout) => {
-            res.json(dbWorkout);
-        })
-        .catch(({
-            message
-        }) => {
-            console.log(message);
-        });
-});
+const db = require("../models");
 
-router.put("/api/workouts/:id", ({
-    params,
-    body
-}, res) => {
-    console.log("PARAMS", body, params);
-
-    Workout.findOneAndUpdate({
-            _id: params.id
-        }, {
-            $push: {
-                exercises: body
-            }
-        }, {
-            new: true
+router.get("/api/workouts", (req, res) => {
+    db.Workout.find({})
+        .sort({
+            date: -1
         })
-        .then((dbWorkout) => {
-            res.json(dbWorkout);
+        .then((workout) => {
+            res.status(200).json(workout);
         })
         .catch((err) => {
-            res.json(err);
+            res.status(400).json(err);
         });
 });
 
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find({})
-        .limit(7)
-        .then((dbWorkout) => {
-            res.json(dbWorkout);
+    db.Workout.find({})
+        .sort({
+            date: -1
+        })
+        .then((workout) => {
+            res.status(200).json(workout);
         })
         .catch((err) => {
-            res.json(err);
+            res.status(400).json(err);
         });
 });
 
-router.get("/api/workouts", (req, res) => {
-    Workout.find({})
-        .then((dbWorkout) => {
-            res.json(dbWorkout);
+router.post("/api/workouts", (req, res) => {
+    db.Workout.create(req.body)
+        .then((workout) => {
+            res.status(201).json(workout);
         })
         .catch((err) => {
-            res.json(err);
+            res.status(400).json(err);
+        });
+});
+
+router.put("/api/workouts/:id", async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    db.Workout.updateOne({
+            _id: id
+        }, {
+            $push: {
+                exercises: {
+                    ...body
+                },
+            },
+        })
+        .then((workout) => {
+            res.status(200).json(workout);
+        })
+        .catch((err) => {
+            res.status(400).json(err);
         });
 });
 
