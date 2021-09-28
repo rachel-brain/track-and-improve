@@ -11,13 +11,13 @@ const WorkoutSchema = new Schema({
     exercises: [{
         workoutclass: {
             type: String,
-            enum: ["resistance", "cardio"],
+            enum: ["Resistance", "Cardio"],
             required: "Class of Workout is Required"
         },
 
         workoutname: {
             type: String,
-            trim: true,
+            enum: ["Bicep Curl", "Lateral Pull", "Push Press", "Running", "Bench Press", "Quad Press", "Military Press"],
             required: "Name of Workout is Required"
         },
 

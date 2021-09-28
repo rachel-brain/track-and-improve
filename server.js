@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 // Connect to Port
 const PORT = process.env.PORT || 3001;
+
+// Create Express app
 const app = express();
 
 // Middleware
@@ -29,7 +31,7 @@ let db = mongoose.connect(uri || "mongodb://localhost/workoutdb", {
 
 const connection = mongoose.connection;
 connection.once('open', () => {
-    console.log("mongoose connection established successfully")
+    console.log("Mongoose connection established successfully")
 });
 
 // Set routes
