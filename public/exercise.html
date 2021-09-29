@@ -24,17 +24,24 @@
         <h2>Add Your Exercise</h2>
         <form action="POST">
           <div class="workout-type">
-            <label for="type">Exercise Type:</label>
+            <label for="type">Class of Workout:</label>
             <select name="type" id="type">
-              <option disabled selected>Select Exercise Type</option>
+              <option disabled selected>Select Workout Type</option>
               <option value="resistance">Resistance</option>
               <option value="cardio">Cardio</option>
             </select>
           </div>
           <div class="cardio-form d-none">
             <div class="cardio-name">
-              <label for="cardio-name">Name:</label>
-              <input type="text" name="cardio-name" id="cardio-name" placeholder="Running" />
+              <label for="cardio-name">Name of Exercise:</label>
+
+              <select type="text" name="cardio-name" id="cardio-name">
+                <option disabled selected>Select Exercise Name</option>
+                <option value="running">Running</option>
+                <option value="burpees">Burpees</option>
+                <option value="cycling">Cycling</option>
+              </select>
+
             </div>
             <div class="distance">
               <label for="distance">Distance (miles):</label>
@@ -47,8 +54,18 @@
           </div>
           <div class="resistance-form d-none">
             <div class="exercise">
-              <label for="name">Exercise Name:</label>
-              <input type="text" name="name" id="name" placeholder="Bench Press" />
+              <label for="name">Name of Exercise:</label>
+
+              <select type="text" name="name" id="name">
+                <option disabled selected>Select Exercise Name</option>
+                <option value="bicepcurl">Bicep Curl</option>
+                <option value="lateralpull">Lateral Pull</option>
+                <option value="pushpress">Push Press</option>
+                <option value="benchpress">Bench Press</option>
+                <option value="quadpress">Quad Press</option>
+                <option value="militarypress">Military Press</option>
+              </select>
+
             </div>
             <div class="weight">
               <label for="weight">Weight (lbs):</label>

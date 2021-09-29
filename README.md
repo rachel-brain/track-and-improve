@@ -18,7 +18,9 @@ In your terminal, type the following commands:
 
 
 
-
+NEED TO FIX:
+1. Workout duration calculation - now is undefined
+2. Dashboard - seeded data not currently showing in Dashboard
 
 
 

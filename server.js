@@ -37,9 +37,10 @@ connection.once('open', () => {
 // Set routes
 const Workout = require("./models/workoutModels.js");
 const router = require("./routes/api.js");
+const html = require("./routes/html.js");
 
 app.use(router);
-require("./routes/html.js")(app);
+app.use(html);
 
 app.post("/submit", ({
     body

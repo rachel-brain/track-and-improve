@@ -16,7 +16,7 @@ const workoutSeed = [{
       weight: 100,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 8)),
@@ -27,7 +27,7 @@ const workoutSeed = [{
       weight: 300,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 7)),
@@ -38,7 +38,7 @@ const workoutSeed = [{
       weight: 185,
       reps: 8,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 6)),
@@ -47,7 +47,7 @@ const workoutSeed = [{
       name: 'Running',
       duration: 25,
       distance: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 5)),
@@ -58,7 +58,7 @@ const workoutSeed = [{
       weight: 285,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 4)),
@@ -69,7 +69,7 @@ const workoutSeed = [{
       weight: 300,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 3)),
@@ -80,7 +80,7 @@ const workoutSeed = [{
       weight: 300,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 2)),
@@ -91,7 +91,7 @@ const workoutSeed = [{
       weight: 300,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 1)),
@@ -102,7 +102,27 @@ const workoutSeed = [{
       weight: 300,
       reps: 10,
       sets: 4,
-    }, ],
+    }],
+  },
+
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 6)),
+    exercises: [{
+      type: 'cardio',
+      name: 'Burpees',
+      duration: 20,
+      distance: 2,
+    }],
+  },
+
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 6)),
+    exercises: [{
+      type: 'cardio',
+      name: 'Cycling',
+      duration: 40,
+      distance: 15,
+    }],
   },
 ];
 

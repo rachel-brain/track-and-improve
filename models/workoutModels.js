@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
-    dateCreated: {
+    day: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
 
     exercises: [{
@@ -50,26 +50,7 @@ const WorkoutSchema = new Schema({
             default: 2
         },
     }],
-
-    totalDuration: {
-        type: Number,
-        default: 1
-    },
-
-    lastUpdated: Date
 });
-
-// setWorkoutFullname: sets the current workout's `workoutFullname` property to the `workoutname` appended to the `workoutclass`
-WorkoutSchema.methods.setWorkoutFullname = function () {
-    this.workoutFullname = `${this.workoutclass} : ${this.workoutname}`;
-    return this.workoutFullname;
-};
-
-// lastUpdatedDate: sets the current Workout's `lastUpdated` property to Date.now()
-WorkoutSchema.methods.lastUpdatedDate = function () {
-    this.lastUpdated = Date.now();
-    return this.lastUpdated;
-};
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
