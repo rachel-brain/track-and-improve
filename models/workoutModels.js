@@ -18,7 +18,7 @@ const WorkoutSchema = new Schema({
         workoutname: {
             type: String,
             enum: ["Bicep Curl", "Lateral Pull", "Push Press", "Running", "Bench Press", "Quad Press", "Military Press"],
-            required: "Name of Workout is Required"
+            required: "Name of Exercise is Required"
         },
 
         duration: {
@@ -54,5 +54,4 @@ const WorkoutSchema = new Schema({
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
-// Export the Workout model
 module.exports = Workout;
